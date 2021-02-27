@@ -35,7 +35,7 @@ int main() {
 				getline(inFile, str);
 				//std::cout << str;
 				std::string name= std::string(str,0, str.find(','));
-				ofFile<<name<<": ";
+				ofFile<<name<<";";
 				int pos = str.find(',');
 				int score = 0;
 				for (int i = pos + 1; i < str.size(); i += 4)
