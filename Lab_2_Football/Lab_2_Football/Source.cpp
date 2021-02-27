@@ -6,7 +6,7 @@ namespace fs = std::filesystem;
 int main() {
 	std::ofstream ofFile;
 	std::ifstream inFile;
-	std::string path = "C:/Users/User/coding/Labs 1.2/Lab-2/Csv files";
+	std::string path = "G:/lab rep/Lab-2/Csv files";
 	for (const auto & entry : fs::directory_iterator(path))
 	{
 		//std::cout << entry.path() << std::endl;
@@ -25,8 +25,9 @@ int main() {
 			while (!inFile.eof()) {
 				str = "";
 				getline(inFile, str);
-				std::cout << str << std::endl;
+				std::cout << str << std::endl;	
 			}
+			std::cout << "Push Test\n";
 		}
 		inFile.close();
 	}
