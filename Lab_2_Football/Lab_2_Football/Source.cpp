@@ -1,12 +1,13 @@
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 #include <fstream>
 #include <filesystem>
 namespace fs = std::filesystem;
 int main() {
 	std::ofstream ofFile;
 	std::ifstream inFile;
-	std::string path = "G:/lab rep/Lab-2/Csv files";
+	std::string path = "C:/Users/User/coding/Labs 1.2/Lab-2/Csv files";
 	std::string path2 = "raiting.csv";
 	for (const auto& entry : fs::directory_iterator(path))
 	{
@@ -35,22 +36,49 @@ int main() {
 				getline(inFile, str);
 				//std::cout << str;
 				std::string name= std::string(str,0, str.find(','));
-				ofFile<<name<<";";
+				ofFile<<name<<",";
 				int pos = str.find(',');
 				int score = 0;
-				for (int i = pos + 1; i < str.size(); i += 4)
-				{
-					if (str[i] >str[i + 2]) 
+				
+				//for (int i = pos + 1; i < str.size(); i++)
+				//{
+					int start = 0, end = 0;
+
+					while (end < str.size()) {
+						start = end;
+						while (start < str.size() && str[start] == ',') {
+							start++;
+						}
+						end = start;
+						while (end < str.size() && str[end] != ',') {
+							end++;
+						}
+						std::string part = std::string(str, start, end - start);
+						//std::cout << part << std::endl;
+						//part.find(':');
+		
+						std::string first;
+						std::string second;
+						std::string A = std::string(part, 0, part.find(':'));
+						std::string B = std::string(part, part.find(':')+1, part.size() - part.find(':'));
+						first = A;
+						second = B;
+						int scoreFirst = std::stoi(A);
+						int scoreSecond = std::stoi(B);
+						std::cout << scoreFirst<<" "<<scoreSecond<< std::endl;
+
+					}
+					/*if (str[i] >str[i + 2]) 
 					{
 						score += 3;
 					}
 					else if (str[i] == str[i + 2])
 					{
 						score += 1;
-					}
-				}
+					}*/
+				//}
 				ofFile << score << "\n";
-				std::cout << str << std::endl;	
+				//std::cout << str << std::endl;	
 			}
 		}
 		inFile.close();
