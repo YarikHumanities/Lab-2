@@ -7,12 +7,12 @@ namespace fs = std::filesystem;
 int main() {
 	std::ofstream ofFile;
 	std::ifstream inFile;
-	std::string path = "C:/Users/User/coding/Labs 1.2/Lab-2/Csv files";
+	std::string path = "G:/lab rep/Lab-2/Csv files";
 	std::string path2 = "raiting.csv";
 	for (const auto& entry : fs::directory_iterator(path))
 	{
 		//std::cout << entry.path() << std::endl;
-		inFile.open(entry.path(), std::ofstream::app);
+		inFile.open(entry.path());
 		ofFile.open(path2, std::ofstream::app);
 		if (!ofFile.is_open()) {
 			std::cout << "Cannot open the second file" << std::endl;
@@ -23,40 +23,40 @@ int main() {
 		if (!inFile.is_open()) {
 			std::cout << "Cannot open the file" << std::endl;
 		}
-		else {
+		else 
+		{
 			std::cout << "File opened" << std::endl;
-			int quant = 0;
+			int quant;
 			inFile >> quant;
 			std::string str;
 			inFile.ignore();
 			std::cout << quant << std::endl;
 			
-			while (!inFile.eof()) {
+			while (!inFile.eof()) 
+			{
 				str = "";
 				getline(inFile, str);
 				//std::cout << str;
 				std::string name= std::string(str,0, str.find(','));
-				ofFile<<name<<",";
+				ofFile<<name<<";";
 				int pos = str.find(',');
 				int score = 0;
 				
-				//for (int i = pos + 1; i < str.size(); i++)
-				//{
 					int start = pos, end = pos;
 
-					while (end < str.size()) {
+					while (end < str.size()) 
+					{
 						start = end;
-						while (start < str.size() && str[start] == ',') {
-							start++;
+						while (start < str.size() && str[start] == ',') 
+						{
+							++start;
 						}
 						end = start;
-						while (end < str.size() && str[end] != ',') {
-							end++;
+						while (end < str.size() && str[end] != ',') 
+						{
+							++end;
 						}
 						std::string part = std::string(str, start, end - start);
-						//std::cout << part << std::endl;
-						//part.find(':');
-		
 						std::string first;
 						std::string second;
 						std::string A = std::string(part, 0, part.find(':'));
@@ -69,23 +69,11 @@ int main() {
 						if (scoreFirst > scoreSecond) {
 							score += 3;
 						}
-						else if (scoreFirst < scoreSecond) {
+						else if (scoreFirst == scoreSecond) {
 							score += 1;
 						}
-						
-						//std::cout << A << " " << B << std::endl;
 					}
-					/*if (str[i] >str[i + 2]) 
-					{
-						score += 3;
-					}
-					else if (str[i] == str[i + 2])
-					{
-						score += 1;
-					}*/
-				//}
-				ofFile << score << "\n";
-				//std::cout << str << std::endl;	
+				ofFile << score << std::endl;
 			}
 		}
 		inFile.close();

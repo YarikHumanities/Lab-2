@@ -1,5 +1,1 @@
-﻿  Source.cpp
-C:\Users\User\coding\Labs 1.2\Lab-2\Lab_2_Football\Lab_2_Football\Source.cpp(47,17): warning C4018: '<': signed/unsigned mismatch
-C:\Users\User\coding\Labs 1.2\Lab-2\Lab_2_Football\Lab_2_Football\Source.cpp(49,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\User\coding\Labs 1.2\Lab-2\Lab_2_Football\Lab_2_Football\Source.cpp(53,18): warning C4018: '<': signed/unsigned mismatch
-  Lab_2_Football.vcxproj -> C:\Users\User\coding\Labs 1.2\Lab-2\Lab_2_Football\Debug\Lab_2_Football.exe
+﻿  Lab_2_Football.vcxproj -> G:\lab rep\Lab-2\Lab_2_Football\Debug\Lab_2_Football.exe
