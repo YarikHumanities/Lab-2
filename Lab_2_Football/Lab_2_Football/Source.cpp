@@ -7,7 +7,7 @@ namespace fs = std::filesystem;
 int main() {
 	std::ofstream ofFile;
 	std::ifstream inFile;
-	std::string path = "C:/Users/User/coding/Labs 1.2/Lab-2/Csv files";
+	std::string path = "G:/lab rep/Lab-2/Csv files";
 	std::string path2 = "raiting.csv";
 	for (const auto& entry : fs::directory_iterator(path))
 	{
@@ -42,7 +42,7 @@ int main() {
 				
 				//for (int i = pos + 1; i < str.size(); i++)
 				//{
-					int start = 0, end = 0;
+					int start = pos, end = pos;
 
 					while (end < str.size()) {
 						start = end;
@@ -63,10 +63,10 @@ int main() {
 						std::string B = std::string(part, part.find(':')+1, part.size() - part.find(':'));
 						first = A;
 						second = B;
-						int scoreFirst = std::stoi(A);
-						int scoreSecond = std::stoi(B);
+						int scoreFirst = std::atoi(A.c_str());
+						int scoreSecond = std::atoi(B.c_str());
 						std::cout << scoreFirst<<" "<<scoreSecond<< std::endl;
-
+						//std::cout << A << " " << B << std::endl;
 					}
 					/*if (str[i] >str[i + 2]) 
 					{
