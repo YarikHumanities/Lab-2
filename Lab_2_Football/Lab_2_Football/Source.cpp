@@ -7,7 +7,7 @@ namespace fs = std::filesystem;
 int main() {
 	std::ofstream ofFile;
 	std::ifstream inFile;
-	std::string path = "G:/lab rep/Lab-2/Csv files";
+	std::string path = "C:/Users/User/coding/Labs 1.2/Lab-2/Csv files";
 	std::string path2 = "raiting.csv";
 	for (const auto& entry : fs::directory_iterator(path))
 	{
@@ -66,6 +66,13 @@ int main() {
 						int scoreFirst = std::atoi(A.c_str());
 						int scoreSecond = std::atoi(B.c_str());
 						std::cout << scoreFirst<<" "<<scoreSecond<< std::endl;
+						if (scoreFirst > scoreSecond) {
+							score += 3;
+						}
+						else if (scoreFirst < scoreSecond) {
+							score += 1;
+						}
+						
 						//std::cout << A << " " << B << std::endl;
 					}
 					/*if (str[i] >str[i + 2]) 
