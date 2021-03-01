@@ -36,23 +36,25 @@ int main() {
 			{
 				str = "";
 				getline(inFile, str);
-				//std::cout << str;
-				std::string name= std::string(str,0, str.find(','));
-				ofFile<<name<<";";
-				int pos = str.find(',');
-				int score = 0;
-				
+				if (str.size() > 0)
+				{
+					//std::cout << str;
+					std::string name = std::string(str, 0, str.find(','));
+					ofFile << name << ";";
+					int pos = str.find(',');
+					int score = 0;
+
 					int start = pos, end = pos;
 
-					while (end < str.size()) 
+					while (end < str.size())
 					{
 						start = end;
-						while (start < str.size() && str[start] == ',') 
+						while (start < str.size() && str[start] == ',')
 						{
 							++start;
 						}
 						end = start;
-						while (end < str.size() && str[end] != ',') 
+						while (end < str.size() && str[end] != ',')
 						{
 							++end;
 						}
@@ -60,12 +62,12 @@ int main() {
 						std::string first;
 						std::string second;
 						std::string A = std::string(part, 0, part.find(':'));
-						std::string B = std::string(part, part.find(':')+1, part.size() - part.find(':'));
+						std::string B = std::string(part, part.find(':') + 1, part.size() - part.find(':'));
 						first = A;
 						second = B;
 						int scoreFirst = std::atoi(A.c_str());
 						int scoreSecond = std::atoi(B.c_str());
-						std::cout << scoreFirst<<" "<<scoreSecond<< std::endl;
+						std::cout << scoreFirst << " " << scoreSecond << std::endl;
 						if (scoreFirst > scoreSecond) {
 							score += 3;
 						}
@@ -73,7 +75,8 @@ int main() {
 							score += 1;
 						}
 					}
-				ofFile << score << std::endl;
+					ofFile << score << std::endl;
+				}
 			}
 		}
 		inFile.close();

@@ -1,1 +1,5 @@
-﻿  Lab_2_Football.vcxproj -> G:\lab rep\Lab-2\Lab_2_Football\Debug\Lab_2_Football.exe
+﻿  Source.cpp
+G:\lab rep\Lab-2\Lab_2_Football\Lab_2_Football\Source.cpp(49,17): warning C4018: <: несоответствие типов со знаком и без знака
+G:\lab rep\Lab-2\Lab_2_Football\Lab_2_Football\Source.cpp(52,20): warning C4018: <: несоответствие типов со знаком и без знака
+G:\lab rep\Lab-2\Lab_2_Football\Lab_2_Football\Source.cpp(57,18): warning C4018: <: несоответствие типов со знаком и без знака
+  Lab_2_Football.vcxproj -> G:\lab rep\Lab-2\Lab_2_Football\Debug\Lab_2_Football.exe
