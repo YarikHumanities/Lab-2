@@ -1,5 +1,12 @@
 ﻿  Source.cpp
+<<<<<<< HEAD
 C:\Users\User\coding\Labs 1.2\Lab-2\Lab_2_Football\Lab_2_Football\Source.cpp(50,18): warning C4018: '<': signed/unsigned mismatch
 C:\Users\User\coding\Labs 1.2\Lab-2\Lab_2_Football\Lab_2_Football\Source.cpp(53,21): warning C4018: '<': signed/unsigned mismatch
 C:\Users\User\coding\Labs 1.2\Lab-2\Lab_2_Football\Lab_2_Football\Source.cpp(58,19): warning C4018: '<': signed/unsigned mismatch
   Lab_2_Football.vcxproj -> C:\Users\User\coding\Labs 1.2\Lab-2\Lab_2_Football\Debug\Lab_2_Football.exe
+=======
+G:\lab rep\Lab-2\Lab_2_Football\Lab_2_Football\Source.cpp(51,17): warning C4018: <: несоответствие типов со знаком и без знака
+G:\lab rep\Lab-2\Lab_2_Football\Lab_2_Football\Source.cpp(54,20): warning C4018: <: несоответствие типов со знаком и без знака
+G:\lab rep\Lab-2\Lab_2_Football\Lab_2_Football\Source.cpp(59,18): warning C4018: <: несоответствие типов со знаком и без знака
+  Lab_2_Football.vcxproj -> G:\lab rep\Lab-2\Lab_2_Football\Debug\Lab_2_Football.exe
+>>>>>>> 0480e9d6a2c32707dc523e3e7749ee75d6fc057d

@@ -8,12 +8,13 @@ int main() {
 	std::ofstream ofFile;
 	std::ifstream inFile;
 	std::string path;
-	std::cout << "Entry path: " << std::endl;
-	std::getline(std::cin, path);
+	std::cout << "Entry path: "<<std::endl;
+	std::getline(std::cin,path);
 	std::string path2 = "raiting.csv";
 	for (const auto& entry : fs::directory_iterator(path))
 	{
 		//std::cout << entry.path() << std::endl;
+
 		if (entry.path().extension() == ".csv") {
 			inFile.open(entry.path());
 			ofFile.open(path2, std::ofstream::app);
@@ -27,6 +28,29 @@ int main() {
 				std::cout << "Cannot open the file" << std::endl;
 			}
 			else
+
+		inFile.open(entry.path());
+		ofFile.open(path2, std::ofstream::app);
+		if (!ofFile.is_open()) {
+			std::cout << "Cannot open the second file" << std::endl;
+		}
+		else {
+			std::cout << "second file is opened\n";
+		}
+		if (!inFile.is_open()) {
+			std::cout << "Cannot open the file" << std::endl;
+		}
+		else 
+		{
+			std::cout << "File opened" << std::endl;
+			int quant;
+			inFile >> quant;
+			std::string str;
+			inFile.ignore();
+			//std::cout << quant << std::endl;
+			
+			while (!inFile.eof()) 
+
 			{
 				std::cout << "File opened" << std::endl;
 				int quant;
@@ -51,6 +75,7 @@ int main() {
 
 						while (end < str.size())
 						{
+
 							start = end;
 							while (start < str.size() && str[start] == ',')
 							{
@@ -77,6 +102,24 @@ int main() {
 							else if (scoreFirst == scoreSecond) {
 								score += 1;
 							}
+							++end;
+						}
+						std::string part = std::string(str, start, end - start);
+						std::string first;
+						std::string second;
+						std::string A = std::string(part, 0, part.find(':'));
+						std::string B = std::string(part, part.find(':') + 1, part.size() - part.find(':'));
+						first = A;
+						second = B;
+						int scoreFirst = std::atoi(A.c_str());
+						int scoreSecond = std::atoi(B.c_str());
+						//std::cout << scoreFirst << " " << scoreSecond << std::endl;
+						if (scoreFirst > scoreSecond) {
+							score += 3;
+						}
+						else if (scoreFirst == scoreSecond) {
+							score += 1;
+
 						}
 						ofFile << score << std::endl;
 					}
